@@ -158,11 +158,85 @@ System.out.println("Valor de i fora: " + i);
 
 ### Sobrecarga
 
+É a capacidade de definir métodos para diferentes conceitos, mas preservando seu nome. Para que isso aconteça, devemos mudar sua lista de parâmetros.
+
+
+
+###### Criação
+
+Alterar a assinatura do métod:
+
+**Ass = nome + parâmetros**
+
+```java
+converterParaInteiro(float f);
+converterParaInteiro(double d);
+converterParaInteiro(String s);
+converterParaInteiro(float f, RoundType rd);
+converterParaInteiro(double d, RoundType rd);
+converterParaInteiro(String s, RoundType rd);
+
+converterParaInteiro(RoundType rd, String s);
+converterParaInteiro();
+```
+
+Maior exemplo de sobrecarga
+
+```Java
+System.out.println("Tudo eu. Sempre eu.")
+```
+
+
+
+#### Sobrecarga X *Sobrescrita*
+
+Embora ambos atuem sobre os métodos podendo usá-los e subvertê-los, o modo como se comportam e são feitos é extremamente diferente. Enquanto a *sobrecarga* muda-se apenas a *lista de parâmetros* do método, a ***sobrescrita*** está ligada com a Orientação a Objetos, ***alterando*** assim o ***conceito de herança*** de um método.  
+
 
 
 ------
 
 ### Retorno
 
+Assim como os o *break* e o *continue*, o "return" também é uma *instrução de interrupção*. Enquanto os dois exemplos anteriores estejam relacionados a loops, o return é comumente *usado em métodos*.
 
+
+
+O método executa sua função quando:
+
+- Completa todas as instruções internas
+- Recebe uma declaração explicita requisitando o retorno
+- Lança uma exceção
+
+
+
+###### Observações
+
+- O **tipo de retorno do método é definido na criação** e pode ser um tipo primitivo ou objeto
+- **O tipo de dado** do return **deve ser compatível com o do método**
+- Se o método for sem retorno (*void*), pode ou não ter "return" para encerrar sua execução
+
+
+
+Exemplos
+
+```java
+//Compatíveis
+public String getMensagem(){
+    return "Olá!";
+}
+
+public double getJuros(){
+    return 2.36;
+}
+
+//Não Compatíveis
+public int getParcelas(){
+    return 1.36f;
+}
+
+public void setIdade(){
+    return 10;
+}
+```
 
